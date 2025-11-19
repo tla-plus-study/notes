@@ -78,7 +78,8 @@ fi
 
 # --- create files ------------------------------------------------------------
 mkdir -p "$week_dir"
-ln -s "${TEMPLATE_DIR}/Makefile" "$week_dir/Makefile" 
+ln -s "$(realpath --relative-to="$week_dir" "${TEMPLATE_DIR}/Makefile")" \
+      "$week_dir/Makefile"
 
 safe_title=$(printf '%s' "$TITLE" | sed 's/[&|\\]/\\&/g')
 sed "s|\$TITLE|$safe_title|g" \
