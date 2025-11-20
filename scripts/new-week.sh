@@ -81,6 +81,7 @@ mkdir -p "$week_dir"
 ln -s "$(realpath --relative-to="$week_dir" "${TEMPLATE_DIR}/Makefile")" \
       "$week_dir/Makefile"
 
+
 safe_title=$(printf '%s' "$TITLE" | sed 's/[&|\\]/\\&/g')
 sed "s|\$TITLE|$safe_title|g" \
   "$TEMPLATE_DIR/notes.tex" \
@@ -99,6 +100,26 @@ cat > "$week_dir/README.md" <<MD
 **Follow-ups:**
 -
 MD
+
+# --- create per user data ----------------------------------------------------
+#
+# to add your custom template - add yourself to the people array
+# create a $TEMPLATE_DIR/$name folder and put 
+#  * Makefile (or just a symlink to the main one)
+#  * notes.tex with a `$TITLE` variable -- it will get populated by the week
+#    number -- same as the main tex file
+people=(bartosz)
+for p in ${people[@]}; do
+  target="${week_dir}/${p}"
+  mkdir -p "${target}"
+
+  sed "s|\$TITLE|$safe_title|g" \
+    "${TEMPLATE_DIR}/${p}/notes.tex" \
+    > "${target}/notes.tex"
+
+  ln -s "$(realpath --relative-to="${target}" "${TEMPLATE_DIR}/Makefile")" \
+    "${target}/Makefile"
+done
 
 echo "Created $week_dir"
 echo "Next steps:"
