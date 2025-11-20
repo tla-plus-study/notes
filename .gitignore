@@ -5,15 +5,9 @@
 *.fls
 *.fdb_latexmk
 
-
-
-**/*_SnapShot_*/
-**/*_SnapShot_*.launch
-**/*___*.launch
-**/.toolbox/
-**/*.toolbox/
-**/check/
-**/MC.out
-**/MC_TE.out
-**/MC.cfg
-**/MC.tla
+**/*.toolbox/*_SnapShot_*/
+**/*.toolbox/*_SnapShot_*.launch
+**/*.toolbox/*___*.launch
+**/*.toolbox/MC.out
+**/*.toolbox/MC_TE.out
+**/*.toolbox/**/*.tla
