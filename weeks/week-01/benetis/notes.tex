@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\title{TLA+ Study Group — Week 01}
+\author{@benetis}
+\date{\today}
+\begin{document}\maketitle
+
+\section{Questions}
+
+\subsection{\textit{if} ($\Rightarrow$) and \textit{iff} ($\Leftrightarrow$)}
+
+\subsubsection*{Definition}
+\begin{enumerate}
+  \item $\Leftrightarrow$ is the logical equivalence.
+  \item $p \Leftrightarrow q$ is read as \underline{p equivalent q} or \underline{p if and only if q}
+\end{enumerate}
+
+\subsubsection*{Truth table}
+
+\begin{tabular}{c|c|c}
+p & q & p $\Leftrightarrow$ q \\
+\hline 
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\end{tabular}
+
+\subsubsection*{Example}
+\textit{if} ($\Rightarrow$) is one-way: If a number is divisible by 4, then it is even. (But not all even numbers are divisible by 4.)
+
+\noindent\textit{iff} ($\Leftrightarrow$) must hold both ways: A number is even $\Leftrightarrow$ it is divisible by 2. (Even $\Rightarrow$ divisible by 2, and divisible by 2 $\Rightarrow$ even.)
+
+\noindent\textbf{Note:} An example of this in TLA+ can be found in \texttt{tla\_plus/iff.tla}
+
+
+\end{document}
