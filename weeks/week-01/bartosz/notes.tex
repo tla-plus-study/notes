@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\title{TLA+ Study Group — Week 01}
+\author{Bartosz}
+\date{\today}
+\begin{document}\maketitle
+
+\section*{Brief Description of the Topics}
+
+\subsection*{Lecture 1}
+
+What is TLA+, for what can it be used and how it's helpful.
+
+\begin{itemize}
+  \item A tool for specification, finding and correcting design errors.
+  \item Well suited for parallel and distributed prgraming.
+  \item TLA+ sits at the design level/above the code level.
+  \item It abstract less-critical/lower level parts of sytems.
+  \item The properties TLA+ can check are conditions on individual executions
+  (i.e 99\% of executions are correct is not a property testable by TLA+)
+  \item Execution of a system is represented as a sequence of discrete steps
+  \item TLA+ represents systems as state machines.
+\end{itemize}
+
+\section*{What stood out}
+
+\begin{itemize}
+  \item [$\ldots$] not solutions but recognizing \textbf{important} problems that had been
+  obscured by irrelevant details
+  \item The process of simplicifaction by removing irrelevant details is called abstraction.
+  \item {
+    \textit{TLA+ has added signiﬁcant value, either ﬁnding subtle bugs we would not
+    have found by other means, or giving us enough conﬁdence to make aggressive
+    optimizations without sacriﬁcing correctness}
+  }
+  \item {
+    \textit{We witnessed ﬁrst hand the brain washing done by years of C
+    programming}
+    -- amen
+  }
+  \item {
+    Parallel and distributed systems being represetned by sequential processes
+    is kinda obvious (Parallel Turing Machines are exactly as powerful as Turing
+    Machines) yet profound.
+  }
+\end{itemize}
+
+\section*{Open Questions}
+% bullets
+
+\end{document}
