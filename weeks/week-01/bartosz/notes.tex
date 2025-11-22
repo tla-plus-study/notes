@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
 \usepackage{hyperref}
 \title{TLA+ Study Group — Week 01}
 \author{Bartosz}
@@ -23,7 +24,40 @@ What is TLA+, for what can it be used and how it's helpful.
   \item TLA+ represents systems as state machines.
 \end{itemize}
 
+
+\subsection*{Lecture 2}
+
+State Machines and TLA+ notation.
+
+\begin{itemize}
+  \item { TLA+ operates on formulas not statements. }
+\end{itemize}
+
+Language keywords
+
+\begin{description}
+  \item[\texttt{TRUE}] { true }
+  \item[\texttt{FALSE}] { false }
+  \item[\texttt{/\textbackslash}] { logical and }
+  \item[\texttt{\textbackslash/}] { logical or }
+  \item[\texttt{=}] { equality }
+  \item[\texttt{==}] { $\triangleq$  }
+  \item[\texttt{'}] { next state i.e $\texttt{pc'} = \texttt{pc} + 1$   }
+  \item[\texttt{EXTENDS}] { module import }
+  \item[\texttt{VARIABLES}] { variable declarations }
+\end{description}
+
+\subsection*{Lecture 3}
+
+TLA+ resources.
+
+Some links to TLA+ groups and introduction materials but mosty a HOWTO on how to install TLA+ and run a model. 
+
+All that was missing was techno music and instructions written live in notepad.
+
 \section*{What stood out}
+
+\subsection{Lecture 1}
 
 \begin{itemize}
   \item [$\ldots$] not solutions but recognizing \textbf{important} problems that had been
@@ -45,6 +79,16 @@ What is TLA+, for what can it be used and how it's helpful.
     Machines) yet profound.
   }
 \end{itemize}
+
+\subsection{Lecture 2}
+
+\begin{itemize}
+  \item { Mathematical notation instead of PL notation. }
+  \item { Variables and identifiers must be declared before they are used --
+  suggesting a single pass language design }
+\end{itemize}
+
+\subsection{Lecture 3}
 
 \section*{Open Questions}
 % bullets
