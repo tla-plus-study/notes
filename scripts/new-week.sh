@@ -108,7 +108,7 @@ MD
 #  * Makefile (or just a symlink to the main one)
 #  * notes.tex with a `$TITLE` variable -- it will get populated by the week
 #    number -- same as the main tex file
-people=(bartosz)
+people=(bartosz benetis)
 for p in ${people[@]}; do
   target="${week_dir}/${p}"
   mkdir -p "${target}"
