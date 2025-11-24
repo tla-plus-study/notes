@@ -11,3 +11,5 @@
 **/*.toolbox/MC.out
 **/*.toolbox/MC_TE.out
 **/*.toolbox/**/*.tla
+
+**/*.toolbox/**/states
