@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{url}
+\title{TLA+ Study Group — Week 03}
+\author{TLA+ Study Group}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section*{Summary}
+% bullets
+\begin{description}
+    \item [Introduction to TLA+] TLA+ marketing and reasoning
+    \item [State Machines in TLA+] First intro to a specific state machine and glimpse of TLA+
+    \item [Resources and Tools] TLA+ Toolbox walkthrough
+    \item [Die Hard] 3 liter jug + 5 liter jug, get 4 liters problem walkthrough
+\end{description}
+
+\section*{Good stuff}
+% bullets
+\begin{itemize}
+    \item TLA in principle reminds me of kripke models used in temporal and dynamic epistemic logic\footnote{\url{https://plato.stanford.edu/entries/dynamic-epistemic/appendix-A-kripke.html}},
+    but so far Lamport just uses the full Kripke models as illustrative, with no mention of those.
+    \item Equivalence vs assignment issue is real. Getting used to treating $=$ as just a part of formula, with assignment dictated by prime ($'$)
+    versions of the variables is counterintuitive.
+\end{itemize}
+
+\section*{Weird stuff}
+\begin{itemize}
+    \item The equvalence vs assignemnt issue also means that you have to consider the state of ALL variables in every state described. If
+    operation needs to be performed on just one variable - the rest still need to be included in the state description; at least the ones
+    that have to remain invariant. If this is not the case, formulas suffer.
+    \item TLA+ Toolbox doesn't really vibe well with Sway + Wayland setup. Crashed on me thrice.
+    \item Dumping conventions and using \texttt{/=} instead of \texttt{!=} for $\neq$ is cruel, but drives the point of "this is math, not programming"
+    home pretty well.
+\end{itemize}
+
+
+% bullets
+
+\section*{Open Questions}
+% bullets
+
+\end{document}
