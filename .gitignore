@@ -13,3 +13,4 @@
 **/*.toolbox/**/*.tla
 
 **/*.toolbox/**/states
+states/
