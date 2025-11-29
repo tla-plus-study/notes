@@ -78,8 +78,8 @@ fi
 
 # --- create files ------------------------------------------------------------
 mkdir -p "$week_dir"
-ln -s "$(realpath --relative-to="$week_dir" "${TEMPLATE_DIR}/Makefile")" \
-      "$week_dir/Makefile"
+cp "$(realpath --relative-to="$week_dir" "${TEMPLATE_DIR}/Makefile")" \
+   "$week_dir/Makefile"
 
 
 safe_title=$(printf '%s' "$TITLE" | sed 's/[&|\\]/\\&/g')
@@ -117,7 +117,7 @@ for p in ${people[@]}; do
     "${TEMPLATE_DIR}/${p}/notes.tex" \
     > "${target}/notes.tex"
 
-  ln -s "$(realpath --relative-to="${target}" "${TEMPLATE_DIR}/Makefile")" \
+  cp "$(realpath --relative-to="${target}" "${TEMPLATE_DIR}/Makefile")" \
     "${target}/Makefile"
 done
 
