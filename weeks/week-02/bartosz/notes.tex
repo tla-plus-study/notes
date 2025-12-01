@@ -7,12 +7,59 @@
 \begin{document}\maketitle
 
 \section*{Brief Description of the Topics}
-% bullets
+\subsection*{Lecture 4}
+
+\begin{itemize}
+  \item { Axiomatizing the Die Hard 3 water jug puzzle }
+  \item { TLA+ formulas must specify changes of "the entire world" i.e changes
+  of all variables must be specified }
+  \item { Rule of thumb: only use a primed variable on the LHS of equality
+  \texttt{v' = ...} and set membership \texttt{v' \textbackslash in} formulas }
+\end{itemize}
+
+\subsection*{Lecture 5}
+
+\begin{itemize}
+  \item { Wedding as an analogy for database transactions. }
+  \item { From this perspective, the goal of a wedding is making sure both
+  parties believe they're in relationship (=commited) or they both aborted and
+  it should be impossible for them to disagree on the outcome. }
+  \item { A "really modern wedding" -- with multiple participants i.e a database
+  transaction consisting of several resource managers. }
+  \item { All RMs must agree if they commit or abort. }
+\end{itemize}
 
 \section*{What stood out}
-% bullets
+
+\subsection*{Lecture 4}
+
+\begin{itemize}
+  \item { No type declarations. Variables types are just sets. Invariants seem
+  like the worse (at least computationally) option. }
+  \item { The axiomatize / simulate steps are reminiscent of logic programming }
+\end{itemize}
+\subsection*{Lecture 5}
+
+\begin{itemize}
+  \item { $\forall$ -- \texttt{\textbackslash A}}
+  \item { $\exists$ -- \texttt{\textbackslash E}}
+  \item { syntax for array expressions \texttt{|->} e.g \texttt{sqr == i
+  \textbackslash in 1 .. 42 |-> i * i } i.e \texttt{sqr[i] = i * i} for $i  \in
+  1 \ldots 42$ }
+  \item { \texttt{EXCEPT} construct \texttt{rmState EXCEPT ![r] = "prepared"}
+  equivalent to
+  \begin{verbatim}
+    rmState' = [ s \in RM |-> IF S = r THEN "prepared"
+                                       ELSE rmState[s]]
+  \end{verbatim}
+  }
+  \item { ,,Be suspicious of success'' is a downer quip, although the ability to
+  investigate the state space save it somewhat }
+\end{itemize}
+
 
 \section*{Open Questions}
-% bullets
+
+How does one actually setup and commit TLA projects to use collaboratively? 
 
 \end{document}
