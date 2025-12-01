@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{listings}
+\title{TLA+ Study Group — Week 01}
+\author{Aleksandr}
+\date{\today}
+\begin{document}\maketitle
+
+\section*{Definitions}
+
+\subsection{What is a TLA+?}
+\begin{itemize}
+\item It is the language for modeling digital systems with an included feature of model properties verification. Abstract enough to be above of code- and harware- level
+\item Suitable for modeling concurrent and distributed systems, allows to find design flaws before code writing.
+\item In TLA+ models, the execution of a system is represented by a \textit{finite sequence of discrete state changes} - behaviour.
+\end{itemize}
+
+\subsection{Abstraction}
+\begin{itemize}
+\item It is a simplified model of an object with removed irrelevant in the current problem context details.
+\end{itemize}
+
+\subsection{Specification}
+\begin{itemize}
+\item The precise high-level model.
+\item  On higher levels can be called "architecture."
+\end{itemize}
+
+\subsection{State machine}
+\begin{itemize}
+\item is an abstract model representing behaviour of a digital system.
+\item is defined by specifying (a) - state definition, (b) - ALL initial states, and (c) - ALL possible transitions between states.
+\end{itemize}
+
+\subsection{Notations}
+\begin{itemize}
+\item For variable {x}: $x'$ - is the next x value.
+\item $\{{a_0}, {a_1}, ..., {a_n}\} \longmapsto		{a_0}..{a_n}$
+\item commutative operators \textbf{and, or} are represented by: $\land$, $\vee	$
+\item Upper-case keywords: \texttt{TRUE, FALSE, IF, THEN, ELSE}
+\item  "def"  $\longmapsto$	$\triangleq$
+\end{itemize}
+
+\section*{Example of spec}
+\begin{lstlisting}
+EXTENDS Integers
+VARIABLES x, pc
+
+Init == (pc = "start") /\ (x = 0)
+
+Assign ==   /\ pc = "start"
+            /\ x' \in 0..100
+            /\ pc' = "middle"
+             
+Increment ==    /\ pc = "middle"
+                /\ x' = x + 1
+                /\ pc' = "done"
+                
+Next == Assign \/ Increment
+
+\end{lstlisting}
+
+
+\end{document}
