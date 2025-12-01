@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{listings}
+\title{TLA+ Study Group — Week 02}
+\author{Aleksandr}
+\date{\today}
+\begin{document}\maketitle
+
+\section*{Summary points}
+\begin{itemize}
+\item It's possible and recommended to use type and correctness specs for model, they will be verified during execution.
+\item The state must always be fully defined aka be a point in the state domain space (== phase point?).
+
+\item Array expression: $M \triangleq [k \in 1..9 \mapsto	k^2] \iff	\forall k \in \{1,2,...,9\}: M[k] =k^2$
+
+\item Transaction supposes consistency of actors and is proceeded if all actors are synchronized and ready to commit, otherwise rejected. No actor can't commit if any other actor rejected.
+
+\item Notation: $\forall \iff \texttt{\textbackslash A}$, $\exists \iff \texttt{\textbackslash E}$
+
+\item Can skip element with \texttt{EXCEPT}, e.g.:
+
+
+keyValues $\triangleq$ [k $\in$ 1..5 $\mapsto$ $k^2$]
+
+key1  $\triangleq$ 3
+
+mappedValues $\triangleq$ [keyValues EXCEPT ![key1] = 81] 
+
+\textit{So, \texttt{mappedValues} equals to: [1,4,81, 16, 25]}
+
+
+\item As like in math, it's usually worth to check spec using smallest/naive case of input parameters.
+
+\item Worth to make sure all specs were checked at least once / all states were entered at least once
+\end{itemize}
+
+\section*{Open Questions}
+\begin{itemize}
+
+\item Interesting, since we do work with discrete automaton model, is there a feature of representing simulation result as a directed graph?
+
+\end{itemize}
+
+
+\end{document}
