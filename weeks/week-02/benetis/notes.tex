@@ -1,5 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{hyperref}
 \title{TLA+ Study Group — Week 02}
 \author{@benetis}
@@ -8,11 +10,30 @@
 
 \section*{Lecture objective}
 % bullets
+Try to model the problem of filling the jugs with water within TLA+.
 
 \section*{What stood out}
 % bullets
+\begin{itemize}
+    \item Allowing only behaviours which allow where exactly how much water is in the jugs at any given time. 
+    \item Going through jug example makes the reader learn what the variables and steps are.
+    \begin{itemize}
+        \item There are no intermediate states, filling a jug is one step. Classic where impartial states are impossible.
+        \item TLA does not have type declarations. \textit{TypeOK} example shows that every type can be typechecked with TLC.
+        \begin{align*}
+            \mathit{TypeOK} &\triangleq \land\ \mathit{small} \in 0..3 \\
+                             &\quad \land\ \mathit{big} \in 0..5
+        \end{align*}
+        \item \textit{TypeOK} is not considered part of the Spec.
+    \end{itemize}
+    \item It feels that \texttt{writing} the spec in TLA+ is simpler than it would be to solve this in programming langauge. Just add invarariants and TLC solves it.
+    \item \textit{At the moment}, however, finding bugs in your spec seems harder than it would be in programming language. It seems easy to write a bad spec, hoping to learn how to avoid this.
+\end{itemize}
 
 \section*{Questions}
 % bullets
+\begin{itemize}
+    \item How to model states which require intermediate states due infrastructure concerns: e.g. transactionality and telemetry. Do we make our states represent this as well?
+\end{itemize}
 
 \end{document}
