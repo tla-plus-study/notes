@@ -11,3 +11,10 @@ Continue with [TLA+ video course](https://lamport.azurewebsites.net/video/videos
 - Prepare for Transactional Commit
     - Goal is to understand the scope of next lecture.
     - Skim over script [Script](https://lamport.azurewebsites.net/video/video5-script.pdf)
+
+## Week 3 (~ 12.06—12.07)
+Continue with [TLA+ video course](https://lamport.azurewebsites.net/video/videos.html).
+- Transactional Commit (lecture & implementation attempt)
+- Prepare for Two-Phase Commit
+    - Goal is to understand the scope of next lecture.
+    - Skim over script [Script](https://lamport.azurewebsites.net/video/video6-script.pdf)
