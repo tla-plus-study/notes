@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # scripts/new-week.sh
 set -euo pipefail
+set -x
 
 # --- config & helpers --------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -78,8 +79,7 @@ fi
 
 # --- create files ------------------------------------------------------------
 mkdir -p "$week_dir"
-cp "$(realpath --relative-to="$week_dir" "${TEMPLATE_DIR}/Makefile")" \
-   "$week_dir/Makefile"
+cp "${TEMPLATE_DIR}/Makefile" "$week_dir/Makefile"
 
 
 safe_title=$(printf '%s' "$TITLE" | sed 's/[&|\\]/\\&/g')
@@ -117,8 +117,7 @@ for p in ${people[@]}; do
     "${TEMPLATE_DIR}/${p}/notes.tex" \
     > "${target}/notes.tex"
 
-  cp "$(realpath --relative-to="${target}" "${TEMPLATE_DIR}/Makefile")" \
-    "${target}/Makefile"
+  cp "${TEMPLATE_DIR}/Makefile" "${target}/Makefile"
 done
 
 echo "Created $week_dir"
