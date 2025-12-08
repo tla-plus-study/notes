@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
 \title{TLA+ Study Group — Week 03}
@@ -8,10 +9,43 @@
 \begin{document}\maketitle
 
 \section*{Brief Description of the Topics}
-% bullets
+
+Record syntax
+\begin{itemize}
+\item {
+  \begin{verbatim}
+  r == [ prof |-> "Fred", num -> 42]
+  \end{verbatim}
+}
+\item {
+  record fields are nominal only, position doesn't matter
+}
+\item {
+  \begin{verbatim}
+  foo["bar"] == foo.bar
+  \end{verbatim}
+}
+\item {
+  \begin{verbatim}
+  f EXCEPT !["prof"] = "RED" == f EXCEPT !.prof = "RED"
+  \end{verbatim}
+  \[
+  f'(x) = \begin{cases}
+    f'(x) = f(x) & \forall x \in dom(f) \setminus \{"prof"\} \\
+    f'(x) = RED  & x = "prof"
+  \end{cases}
+  \]
+}
+\end{itemize}
 
 \section*{What stood out}
-% bullets
+\begin{itemize}
+  \item {
+    I don't think I can live without types. I spent 30 minutes debugging the
+    spec because I wrote ,,commited'' instead of 'committed'' inside
+    \texttt{RMRcvCommitMsg} - this is JS level of bullshit.
+  }
+\end{itemize}
 
 \section*{Open Questions}
 % bullets
