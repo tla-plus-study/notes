@@ -10,9 +10,22 @@
 % bullets
 
 \section*{What stood out}
-% bullets
+\begin{itemize}
+    \item in TLA+ every value is a set. 
+    \item TLA+ does not specify what set elements are and cannot evaluate expressions like $42 \in ABC$.
+    \item The scope of $\forall$ and $\exists$ extends as far as possible in TLA+, unless ended by parentheses or the end of a list item such as $\land$ or $\lor$.
+\end{itemize}
 
 \section*{Questions}
+\begin{itemize}
+    \item During video: Why this program does not deadlock. It seems it always should.
+    \item After: Why do we turn off TLC deadlock detection?
+\end{itemize}
+
+\section*{Lecture scope, but not in syllabus}
+\begin{itemize}
+    \item Precedence graph\footnote{\url{https://en.wikipedia.org/wiki/Precedence_graph}}
+\end{itemize}
 % bullets
 
 \end{document}
