@@ -8,12 +8,67 @@
 \begin{document}\maketitle
 
 \section*{Brief Description of the Topics}
-% bullets
+
+\begin{itemize}
+  \item { Description of PAXOS a fault-tolerant distributed transaction-commit algorithm }
+\end{itemize}
+
+New syntax:
+\begin{description}
+  \item[CHOOSE] { 
+    \begin{verbatim}
+      CHOOSE v \in S : P equals
+    \end{verbatim}
+    if S is a singleton set then v is the value of the element of the singleton
+    set; otherwise v is unspecified but P holds. If P cannot hold TLA will mark
+    an error. One should only use it in the case of singletons or when, in a
+    larger expression, the value doesn't depend on which $v$ was chosen
+  }
+  \item[LET] { 
+    \begin{verbatim}
+    LET value == $expr
+    IN $expr
+    \end{verbatim}
+  }
+  \item[set comprehension $v \in S : P$] {
+    \begin{verbatim} {
+      { v \in S : P }
+    \end{verbatim}
+    subset of S consisting of all $v$ satisfying ,P for example:
+    \begin{verbatim}
+      { n \in Nat : n > 17 } (* = { 18, 19, 20 ... }
+    \end{verbatim}
+  }
+  \item[set comprehension $e : v \in S$] {
+    \begin{verbatim} {
+      { e : v \in S }
+    \end{verbatim}
+    for example
+    \begin{verbatim}
+    {n^2 : n \in Nat} (* { 0, 1, 4, 9... }
+    \end{verbatim}
+  }
+  \item[generalization of EXECPT] {
+    \begin{verbatim}
+    aState' = [aState EXCEPT ![m.ins][acc].mbal = m.bal,
+                             ![m.ins][acc].bal  = m.bal,
+                             ![m.ins][acc].val  = m.val
+    \end{verbatim}
+    is equivalent to
+    \begin{verbatim}
+    aState[m.ins][acc].mbal = m.bal;
+    aState[m.ins][acc].bal = m.bal;
+    aState[m.ins][acc].val = m.val;
+    \end{verbatim}
+
+    i.e a "copy method" for records that allows for arbitrary nesting and
+    chaining
+  }
+\end{description}
 
 \section*{What stood out}
-% bullets
+
 
 \section*{Open Questions}
-% bullets
 
 \end{document}
